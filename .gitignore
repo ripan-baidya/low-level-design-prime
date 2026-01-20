@@ -1,0 +1,11 @@
+# .gitignore (root)
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE generated files
+.idea
+*.iml
+*.ipr
+*.iws
