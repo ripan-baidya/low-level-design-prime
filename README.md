@@ -1,4 +1,4 @@
-# Low Level Design Prime
+## Low Level Design
 
 <!-- Company Tags -->
 
@@ -7,13 +7,6 @@
 ![Apple](https://img.shields.io/badge/Apple-000000?style=for-the-badge&logo=apple&logoColor=white)
 ![Netflix](https://img.shields.io/badge/Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white)
 ![Google](https://img.shields.io/badge/Google-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Microsoft](https://img.shields.io/badge/Microsoft-0078D7?style=for-the-badge&logo=microsoft&logoColor=white)
-
-<!-- Tools -->
-
-[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
-[![Low Level Design](https://img.shields.io/badge/Low_Level_Design-Prime-purple?style=for-the-badge)](#)
-
 
 <!-- Complete Low Level Design Roadmap -->
 
