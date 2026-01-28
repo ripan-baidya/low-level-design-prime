@@ -7,8 +7,6 @@
 **Intent (One-liner):**
 Create new objects by **cloning an existing object (prototype)** instead of creating from scratch.
 
----
-
 ## 1. Introduction (What + Why)
 
 The Prototype design pattern is a creational pattern that allows creating new objects by copying an existing instance rather than instantiating a new one.
@@ -58,6 +56,13 @@ Avoid Prototype when:
 - Immutable objects are sufficient
 
 📌 Mentioning deep copy issues scores points.
+
+**Note: (Shallow vs Deep Copy)**
+
+- **Shallow copy**: A shallow copy copies the object but not the objects it references.
+So, both objects point to the same referenced objects.
+- **Deep copy**: A deep copy copies the object and all nested objects recursively.
+So, no shared references.
 
 ## 5. Core Components (Participants)
 
