@@ -1,5 +1,4 @@
 public class Employee implements Prototype<Employee> {
-
     private String name;
     private String role;
     private double salary;
@@ -10,7 +9,7 @@ public class Employee implements Prototype<Employee> {
         this.salary = salary;
     }
 
-    // Copy constructor (only for internal use)
+    // Copy constructor (Only for internal use)
     private Employee(Employee employee) {
         this.name = employee.name;
         this.role = employee.role;
@@ -27,10 +26,6 @@ public class Employee implements Prototype<Employee> {
     }
 
     public void showDetails() {
-        System.out.println(
-                "Name: " + name +
-                        ", Role: " + role +
-                        ", Salary: " + salary
-        );
+        System.out.println("Name: " + name + ", Role: " + role + ", Salary: " + salary);
     }
 }

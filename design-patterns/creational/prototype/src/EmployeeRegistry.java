@@ -2,7 +2,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EmployeeRegistry {
-
     private Map<String, Employee> prototypes = new HashMap<>();
 
     // Register a prototype
