@@ -53,11 +53,12 @@ Avoid when:
 ## 5. Core Components (Participants)
 
 | Component          | Responsibility               |
-| ------------------ | ---------------------------- |
+| ---                | ---                          |
 | Component          | Defines the common interface |
 | Concrete Component | Base object to be decorated  |
 | Base Decorator     | Holds reference to Component |
 | Concrete Decorator | Adds extra behavior          |
+| Client             | Client Application           |
 
 ## 6. UML / Structure (Mental Model)
 
