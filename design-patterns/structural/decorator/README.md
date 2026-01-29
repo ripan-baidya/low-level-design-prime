@@ -62,25 +62,48 @@ Avoid when:
 ## 6. UML / Structure (Mental Model)
 
 ```
-          Gift
-           ▲
-           |
-      GiftDecorator
-           ▲
-   -----------------
-   |       |       |
-Wrapper   Bow   NameTag
+Client --uses----> Component ---------------------------▶ BaseDecorator                    
+                      ▲                                          ▲
+                ______|_______                          _________|________
+                |            |                          |                |
+        ConcreteComponentA ConcreteComponentB    ConcreteDecoratorA   ConcreteDecoratorB          
 ```
 
 🧠 **Mental model**:
 
 > “Decorator _is-a_ Component and _has-a_ Component”
 
----
-
 ## 7. Code (Gift Example)
 
-### Component
+**Problem Statement:** 
+
+Imagine an online gift-preparation system where customers can buy a gift item (for example, a Watch) and optionally decorate it in multiple ways — such as adding a wrapper, a bow, or a name tag.
+
+**Challenges:**
+
+- Decorations are optional and can be combined in any order
+- New decoration types may be added in the future
+- We should not modify the core gift preparation logic every time a new decoration is introduced
+- **Creating subclasses like:**
+    - WrappedWatch
+    - WrappedBowWatch
+    - WrappedBowNameTagWatch
+    
+    quickly leads to class explosion and rigid code
+
+**Goal:**
+
+Design a solution that allows:
+
+- Dynamic addition of responsibilities (decorations)
+- Runtime composition of features
+- Adherence to the Open/Closed Principle (open for extension, closed for modification)
+
+This is where the **Decorator Pattern** fits perfectly.
+
+### Component (Gift)
+
+Defines a common interface for all gifts and decorators. Both the base gift and all decorations follow the same contract, making them interchangeable.
 
 ```java
 package gift;
@@ -90,9 +113,9 @@ public interface Gift {
 }
 ```
 
----
+### Concrete Component (Watch)
 
-### Concrete Component
+Represents the core gift item. Contains only the basic gift preparation logic and has no knowledge of any decorations.
 
 ```java
 package gift;
@@ -112,9 +135,9 @@ public class Watch implements Gift {
 }
 ```
 
----
+### Abstract/Base Decorator (GiftDecorator)
 
-### Base Decorator
+Acts as a base class for all decorators. Wraps another Gift object and forwards calls to it, enabling dynamic behavior extension.
 
 ```java
 package decorators;
@@ -131,9 +154,9 @@ public abstract class GiftDecorator implements Gift {
 }
 ```
 
----
-
 ### Concrete Decorators
+
+Each decorator adds a specific decoration to the gift. They enhance the result of prepare() without altering the original gift or other decorators.
 
 ```java
 package decorators;
@@ -189,9 +212,9 @@ public class NameTagDecorator extends GiftDecorator {
 }
 ```
 
----
-
 ### Client Code
+
+Composes the gift by wrapping it with decorators at runtime. Allows flexible decoration combinations while avoiding subclass explosion.
 
 ```java
 import decorators.*;
